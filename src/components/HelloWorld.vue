@@ -1,37 +1,36 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
+  <div class="container">
+    <section>
+      <h1>{{ msg }}</h1>
+      <b-button @click="toast" class="button" type="is-default">Toast</b-button>
+      <b-button @click="snackbar" class="button" type="is-warning">Snackbar</b-button>
+      <b-button @click="dialog" class="button" type="is-info">Dialog</b-button>
+    </section>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  export default {
+    name: 'HelloWorld',
+    props: {
+      msg: String
+    },
+    methods: {
+      toast() {
+        this.$toast.open('Something happened')
+      },
+      snackbar() {
+        this.$snackbar.open(`Default, positioned bottom-right with a green 'OK' button`)
+      },
+      dialog() {
+        this.$dialog.alert('Everything looks fine!')
+      },
+    }
   }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .button {
+    margin: 5px;
+  }
 </style>
