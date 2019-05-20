@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <nav class="navbar is-link">
+      <div class="navbar-brand">
+        <div class="navbar-item">Sample</div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          End
+        </div>
+      </div>
+    </nav>
+
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
